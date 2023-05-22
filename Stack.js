@@ -6,6 +6,7 @@ var Stack = function(){
     this.push = function(element){
         this.data[this.count] = element;
         this.count++;
+        return `${element} pushed`
     }
     // Pop
     this.pop = function(){
@@ -13,15 +14,16 @@ var Stack = function(){
             return undefined;
         }
         this.count--;
+        var lastElement = this.data[this.count];
         delete this.data[this.count];
-        return this.data;
+        return `${lastElement} poped`;
     }
     // Current top element
     this.top = function(){
-        return this.data[this.count - 1];
+        return `Top level Element: ${this.data[this.count - 1]}`;
     }
     // size of the data
     this.size = function(){
-        return this.count;
+        return `Length of the data: ${this.count}`;
     }
 }

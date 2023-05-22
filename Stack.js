@@ -4,6 +4,9 @@ var Stack = function(){
 
     // Push
     this.push = function(element){
+        if(!element){
+            return "Pass the elemnt throgh parameters";
+        }
         this.data[this.count] = element;
         this.count++;
         return `${element} pushed`
